@@ -1,0 +1,13 @@
+{
+  "User": {
+    "Id": 530,
+    "Username": "istnrkhal",
+    "Name": "Nader Khalilieh",
+    "Email": "nader.khalilieh@stud.h-da.de",
+    "AvatarUrl": "https://secure.gravatar.com/avatar/3ba4cdd82c3ffff2b963604ccd95ecaa?s=80&d=identicon",
+    "PrivateToken": "f05ec9137bb4fc184f6e289047a695b1916a3d23aa1466ef299e97dd491e4afa",
+    "Host": "https://code.fbi.h-da.de",
+    "TwoFactorEnabled": false,
+    "ApiVersion": 3
+  }
+}

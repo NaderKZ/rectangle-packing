@@ -1,0 +1,6 @@
+﻿  RectLoader.cpp
+  Main.cpp
+  Generating Code...
+c:\users\nadermeister\desktop\farotest\test\test\rectloader.cpp(68): warning C4715: 'RectLoader::load': not all control paths return a value
+  Test.vcxproj -> C:\Users\Nadermeister\Desktop\FaroTest\Test\Debug\Test.exe
+  Test.vcxproj -> C:\Users\Nadermeister\Desktop\FaroTest\Test\Debug\Test.pdb (Partial PDB)
