@@ -15,6 +15,7 @@ RectLoader::RectLoader()
 RectLoader::~RectLoader()
 {
 }
+
 /* The load() function reads each line from the file then 
 splits each line into 2 seperate coordinates according to 
 the tab or "\t" character between them and then converts 
@@ -25,6 +26,7 @@ vector and returns it.
 */
 vector<Rect> RectLoader::load()
 {
+	cout << "Name of input file: " << this->filepath << "\n\n";
 	string filePath = this->filepath;
 	ifstream f(filePath, ios::in);
 	if (f) 
@@ -45,7 +47,7 @@ vector<Rect> RectLoader::load()
 			int pos = lineBuffer.find(delimiter);
 			if (pos == -1)
 			{
-				cout << "the ascii file: " << this->filepath << " is corrupted. please check the file and try again!" << endl;
+				cout << "the ascii file is corrupted. please check the file and try again!" << endl;
 				system("pause");
 				exit(EXIT_FAILURE);
 			}
@@ -57,13 +59,12 @@ vector<Rect> RectLoader::load()
 			int pos2 = temptoken.find(delimiter2);
 			if (pos2 == -1)
 			{
-				cout << "the ascii file: " << this->filepath << " is corrupted. please check the file and try again!" << endl;
+				cout << "the ascii file is corrupted. please check the file and try again!" << endl;
 				system("pause");
 				exit(EXIT_FAILURE);
 			}
 			p1.x = stoi(temptoken.substr(0, pos2));
 			p1.y = stoi(temptoken.substr(pos2 +1, 256));
-			cout << p1.x << "----------------" << p1.y << endl;
 
 
 
