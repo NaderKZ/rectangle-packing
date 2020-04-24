@@ -17,9 +17,13 @@ public:
 	RectLoader(const string&);
 	~RectLoader();
 
-	vector<Rect> load(string);
+
+	vector<Rect> load();
+
+
 
 private:
+	 string filepath;
 
 };
 

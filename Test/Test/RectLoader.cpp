@@ -4,7 +4,7 @@
 
 RectLoader::RectLoader(const string&filePath)
 {
-	this->load(filePath);
+	this->filepath = filePath;
 }
 
 RectLoader::RectLoader()
@@ -15,10 +15,17 @@ RectLoader::RectLoader()
 RectLoader::~RectLoader()
 {
 }
-
-vector<Rect> RectLoader::load(string filePath)
+/* The load() function reads each line from the file then 
+splits each line into 2 seperate coordinates according to 
+the tab or "\t" character between them and then converts 
+the x and y from string to int for each point. the first 
+point is always the top left and the second one is always
+the bottom right. Then it saves the Rect objects in a 
+vector and returns it.
+*/
+vector<Rect> RectLoader::load()
 {
-
+	string filePath = this->filepath;
 	ifstream f(filePath, ios::in);
 	if (f) 
 	{
@@ -30,34 +37,49 @@ vector<Rect> RectLoader::load(string filePath)
 			Point p1;
 			Point p2;
 			string lineBuffer;
-
+			string delimiter = "\t";
+			string temptoken, temptoken2;
+			
 
 			getline(f, lineBuffer, '\n');
+			int pos = lineBuffer.find(delimiter);
+			if (pos == -1)
+			{
+				cout << "the ascii file: " << this->filepath << " is corrupted. please check the file and try again!" << endl;
+				system("pause");
+				exit(EXIT_FAILURE);
+			}
+
+			temptoken = lineBuffer.substr(0, pos);
+			temptoken2 = lineBuffer.substr(pos, 256);
+
+			string delimiter2 = ",";
+			int pos2 = temptoken.find(delimiter2);
+			if (pos2 == -1)
+			{
+				cout << "the ascii file: " << this->filepath << " is corrupted. please check the file and try again!" << endl;
+				system("pause");
+				exit(EXIT_FAILURE);
+			}
+			p1.x = stoi(temptoken.substr(0, pos2));
+			p1.y = stoi(temptoken.substr(pos2 +1, 256));
+			cout << p1.x << "----------------" << p1.y << endl;
 
 
-			lineBuffer.erase(remove(lineBuffer.begin(), lineBuffer.end(), ','), lineBuffer.end());
-			lineBuffer.erase(remove(lineBuffer.begin(), lineBuffer.end(), '\t'), lineBuffer.end());
 
+			pos2 = temptoken2.find(delimiter2);
+			p2.x = stoi(temptoken2.substr(0, pos2));
+			p2.y = stoi(temptoken2.substr(pos2+1, 256));
 
-			//cout << buffer << endl;
-			
-			
-			p1.x = lineBuffer[0] - 48;
-			p1.y = lineBuffer[1] - 48;
-
-			p2.x = lineBuffer[2] - 48;
-			p2.y = lineBuffer[3] - 48;
-			
-			Rect tempRect(i,p1,p2);
-
+			Rect tempRect(i, p1, p2);
+		
 			rectVector.push_back(tempRect);
-			
-			//cout << tempRect.getId() << endl;
-			
 			i++;
 		}
-		//cout << rectVector.size() << endl;
-		//cout << rectVector[1].getRectCorner1().x << endl;
+
+		
+		f.close();
+		
 		return rectVector;
 	}
 	else
