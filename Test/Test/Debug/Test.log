@@ -1,4 +1,15 @@
-﻿  RectLoader.cpp
-c:\users\nadermeister\desktop\farotest\test\test\rectloader.cpp(91): warning C4715: 'RectLoader::load': not all control paths return a value
+﻿  Main.cpp
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(9): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(47): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(61): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(62): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(75): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(110): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(113): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(151): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(154): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(188): warning C4018: '<': signed/unsigned mismatch
+c:\users\nadermeister\desktop\farotest\test\test\main.cpp(196): warning C4018: '<': signed/unsigned mismatch
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   Test.vcxproj -> C:\Users\Nadermeister\Desktop\FaroTest\Test\Debug\Test.exe
   Test.vcxproj -> C:\Users\Nadermeister\Desktop\FaroTest\Test\Debug\Test.pdb (Partial PDB)
